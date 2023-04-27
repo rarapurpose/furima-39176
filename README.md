@@ -68,3 +68,8 @@ Things you may want to cover:
 | street | string | NOT NULL | 
 | apartment | string | NOT NULL | 
 | phone_number | string | NOT NULL | 
+
+
+
+
+ 
