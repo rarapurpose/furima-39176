@@ -36,8 +36,8 @@ Things you may want to cover:
 | list_name_kana | string | null: false |   
 | birthday | date | null: false |   
 
- + has_many: item
- + has_many: order
+ + has_many: items
+ + has_many: orders
 ---
 
 # items table   
@@ -50,8 +50,8 @@ Things you may want to cover:
 | shipping_option_id | integer | null: false |   
 | shipping_prefecture_id | integer | null: false |   
 | shipping_period_id | integer | null: false |  
-| price | string | null: false |   
-| user_id | text | null: false |   
+| price | integer | null: false |   
+| user | references | null: false,foreign_key:true  |   
 
 + belongs_to : user
 + has_one: order
@@ -60,10 +60,8 @@ Things you may want to cover:
 # orders table   
 |Column|Type|Option|   
 | :--: | :--: | :--: |   
-| item | references | null: false |
-| user | references | null: false |   
-| address_id | string | null: false | 
-| credit_card_id | string | null: false, foreign_key: true | 
+| item | references | null: false,foreign_key:true |
+| user | references | null: false,foreign_key:true |   
 
 + belongs_to : user
 + belongs_to : item
@@ -73,14 +71,14 @@ Things you may want to cover:
 # addresses table
 |Column|Type|Option|   
 | :--: | :--: | :--: |   
+| order | references | null: false,foreign_key:true |   
 | postal_code | string | null: false |   
-| prefecture_id | integer | null: false |
+| shipping_prefecture_id | integer | null: false |
 | city | string | null: false | 
 | street | string | null: false | 
 | apartment | string |
 | phone_number | string | null: false | 
 
-+ belongs_to : user
 + belongs_to : order 
   
 
