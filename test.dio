@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="eYWzA-uGWt_b2vv-N-er" name="ER DIAGRAM">
-        <mxGraphModel dx="505" dy="499" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="392" dy="499" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -72,25 +72,25 @@
                 <mxCell id="202" value="addresses" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="80" y="790" width="300" height="250" as="geometry"/>
                 </mxCell>
-                <mxCell id="253" value="● order                     (references, null: false,&#10;                                  foreign_key:true)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="202">
+                <mxCell id="253" value="● order                                  (references, null: false,&#10;                                               foreign_key:true)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;" vertex="1" parent="202">
                     <mxGeometry y="26" width="300" height="44" as="geometry"/>
                 </mxCell>
-                <mxCell id="203" value="● postal_code           (string, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
+                <mxCell id="203" value="● postal_code                       (string, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
                     <mxGeometry y="70" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="204" value="● category_id            (integer, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
+                <mxCell id="204" value="● shipping_prefecture_id      (integer, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
                     <mxGeometry y="100" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="207" value="● city                         (string, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
+                <mxCell id="207" value="● city                                      (string, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
                     <mxGeometry y="130" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="208" value="● street                     (string, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
+                <mxCell id="208" value="● street                                  (string, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
                     <mxGeometry y="160" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ojsz9SOW44I771ogdldl-239" value="● apartment               (string)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
+                <mxCell id="ojsz9SOW44I771ogdldl-239" value="● apartment                          (string)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
                     <mxGeometry y="190" width="300" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="205" value="● phone_number       (string, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
+                <mxCell id="205" value="● phone_number                  (string, null: false)" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;rounded=1;" parent="202" vertex="1">
                     <mxGeometry y="220" width="300" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="217" style="edgeStyle=none;html=1;entryX=0.878;entryY=-0.023;entryDx=0;entryDy=0;endArrow=ERmany;endFill=0;entryPerimeter=0;" parent="1" source="80" target="202" edge="1">

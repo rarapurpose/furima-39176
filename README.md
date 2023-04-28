@@ -44,7 +44,7 @@ Things you may want to cover:
 |Column|Type|Option|   
 | :--: | :--: | :--: |   
 | item_name | string | null: false |
-| item description | text | null: false |   
+| item_description | text | null: false |   
 | detail_category_id | integer | null: false |   
 | detail_condition_id | integer | null: false |   
 | shipping_option_id | integer | null: false |   
