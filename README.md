@@ -34,11 +34,10 @@ Things you may want to cover:
 | list_name | string | null: false |   
 | first_name_kana | string | null: false |   
 | list_name_kana | string | null: false |   
-| birthday | text | null: false |   
+| birthday | date | null: false |   
 
  + has_many: item
  + has_many: order
- + has_many: address
 ---
 
 # items table   
@@ -46,13 +45,16 @@ Things you may want to cover:
 | :--: | :--: | :--: |   
 | item_name | string | null: false |
 | item description | text | null: false |   
-| category_id | integer | null: false |
+| detail_category_id | integer | null: false |   
+| detail_condition_id | integer | null: false |   
+| shipping_option_id | integer | null: false |   
+| shipping_prefecture_id | integer | null: false |   
+| shipping_period_id | integer | null: false |  
 | price | string | null: false |   
 | user_id | text | null: false |   
 
 + belongs_to : user
 + has_one: order
-+ has_one: category
 ---
 
 # orders table   
@@ -61,23 +63,25 @@ Things you may want to cover:
 | item | references | null: false |
 | user | references | null: false |   
 | address_id | string | null: false | 
-| credit_card_id | string | null: false | 
+| credit_card_id | string | null: false, foreign_key: true | 
 
 + belongs_to : user
-+ has_many : address
++ belongs_to : item
++ has_one : address
 ---
 
 # addresses table
 |Column|Type|Option|   
 | :--: | :--: | :--: |   
 | postal_code | string | null: false |   
-| category_id | integer | null: false |
+| prefecture_id | integer | null: false |
 | city | string | null: false | 
 | street | string | null: false | 
 | apartment | string |
 | phone_number | string | null: false | 
 
 + belongs_to : user
++ belongs_to : order 
   
 
 
