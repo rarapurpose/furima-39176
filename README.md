@@ -31,9 +31,9 @@ Things you may want to cover:
 | email | string | null: false, unique: true |   
 | encrypted_password | string | null: false |   
 | first_name | string | null: false |   
-| list_name | string | null: false |   
+| last_name | string | null: false |    
 | first_name_kana | string | null: false |   
-| list_name_kana | string | null: false |   
+| last_name_kana | string | null: false |   
 | birthday | date | null: false |   
 
  + has_many: items
