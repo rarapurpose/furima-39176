@@ -5,11 +5,13 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
 
-  validates :nickname, :last_name_kana, :first_name_kana, :birthday, presence: true
+  validates :nickname, :birthday, presence: true
   
-  validates :last_name_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: '全角カタカナのみで入力して下さい' }
-  validates :first_name_kana, format: { with: /\A[ァ-ヶー－]+\z/, message: '全角カタカナのみで入力して下さい' }
-  
+  with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: '全角カタカナのみで入力して下さい' } do
+  validates :last_name_kana
+  validates :first_name_kana
+  end
+    
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'には英字と数字の両方を含めて設定してください'
 
@@ -17,5 +19,6 @@ class User < ApplicationRecord
   validates :first_name
   validates :last_name
   end
+  
 end
 
