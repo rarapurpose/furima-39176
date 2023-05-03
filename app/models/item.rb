@@ -14,15 +14,17 @@ class Item < ApplicationRecord
   #active_storage
   has_one_attached :image   
 
-  validates :image,                   presence: true
-  validates :item_name,               presence: true
-  validates :item_description,        presence: true
-  validates :detail_category_id,      presence: true
-  validates :detail_condition_id,     presence: true
-  validates :shipping_option_id,      presence: true
-  validates :shipping_prefecture_id,  presence: true
-  validates :shipping_period_id,      presence: true
-  validates :price,                   presence: true
+  with_options presence: true do
+  validates :image                   
+  validates :item_name               
+  validates :item_description        
+  validates :detail_category_id      
+  validates :detail_condition_id     
+  validates :shipping_option_id      
+  validates :shipping_prefecture_id  
+  validates :shipping_period_id      
+  validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
+  end
 
   #validates :detail_category_id, numericality: { other_than: 1 , itemcategory: "can't be blank"}
 

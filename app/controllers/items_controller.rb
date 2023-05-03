@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  #loginしていない場合
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index    
