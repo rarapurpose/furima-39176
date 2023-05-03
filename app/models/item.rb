@@ -32,7 +32,7 @@ class Item < ApplicationRecord
     validates :detail_condition_id
     validates :shipping_option_id
     validates :shipping_prefecture_id
-    validates  :shipping_period_id
+    validates :shipping_period_id
   end
 
 
