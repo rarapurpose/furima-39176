@@ -1,5 +1,5 @@
 class CreateItems < ActiveRecord::Migration[6.0]
-  belongs_to : user
+  #belongs_to : user
   #has_one: order
 
   def change

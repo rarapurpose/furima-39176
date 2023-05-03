@@ -73,17 +73,17 @@
           配送料の負担
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:option, [], :hoge, :hoge, {}, {class:"select-box", id:"shipping_option"}) %>
+        <%= f.collection_select(:shipping_option_id, ShippingOption.all, :id, :name, {}, {class:"select-box", id:"shipping_option"}) %>
         <div class="weight-bold-text">
           発送元の地域
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:prefecture, [], :hoge, :hoge, {}, {class:"select-box", id:"shipping_prefecture"}) %>
+        <%= f.collection_select(:shipping_prefecture_id, ShippingPrefecture.all, :id, :name, {}, {class:"select-box", id:"shipping_prefecture"}) %>
         <div class="weight-bold-text">
           発送までの日数
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:period, [], :hoge, :hoge, {}, {class:"select-box", id:"shipping_period"}) %>
+        <%= f.collection_select(:shipping_period_id, ShippingPeriod.all, :id, :name, {}, {class:"select-box", id:"shipping_period"}) %>
       </div>
     </div>
     <%# /配送について %>

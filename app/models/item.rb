@@ -7,6 +7,9 @@ class Item < ApplicationRecord
   #ActiveHash
   belongs_to :detail_category 
   belongs_to :detail_condition
+  belongs_to :shipping_option 
+  belongs_to :shipping_prefecture
+  belongs_to :shipping_period 
 
   #active_storage
   has_one_attached :image   

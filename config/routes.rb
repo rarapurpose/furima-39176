@@ -5,6 +5,5 @@ Rails.application.routes.draw do
   
   #resources :users  only: [:new, :create]
   resources :items, only: [:new, :create]
-  resources :itemcategory
-  
+  #resources :items do
 end
