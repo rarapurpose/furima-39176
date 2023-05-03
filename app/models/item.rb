@@ -15,6 +15,7 @@ class Item < ApplicationRecord
   has_one_attached :image   
 
   with_options presence: true do
+  validates :user_id
   validates :image                   
   validates :item_name               
   validates :item_description        
@@ -25,6 +26,15 @@ class Item < ApplicationRecord
   validates :shipping_period_id      
   validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 }
   end
+
+  with_options numericality: { other_than: 0 } do
+    validates :detail_category_id
+    validates :detail_condition_id
+    validates :shipping_option_id
+    validates :shipping_prefecture_id
+    validates  :shipping_period_id
+  end
+
 
   #validates :detail_category_id, numericality: { other_than: 1 , itemcategory: "can't be blank"}
 

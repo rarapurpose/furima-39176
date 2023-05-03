@@ -6,6 +6,20 @@ class ItemsController < ApplicationController
     @items = Item.includes(:user).order('created_at DESC') #昇順/降順
   end
 
+  def new
+    @item = Item.new
+  end
+
+  def create
+    @item = Item.new(item_params)
+    
+    if @item.save
+      redirect_to root_path
+    else
+      render :new      
+    end
+  end
+
   private
 
   def item_params
