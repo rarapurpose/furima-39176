@@ -55,6 +55,7 @@ Things you may want to cover:
 
 + belongs_to : user
 + has_one: order
++ belongs_to_active_hash :itemcategory
 ---
 
 # orders table   
@@ -81,6 +82,9 @@ Things you may want to cover:
 
 + belongs_to : order 
   
+# item category  
+ belongs_to : item
+
 
 
 

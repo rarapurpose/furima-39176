@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
+  has_many :items      
   validates :nickname, :birthday, presence: true
   
   with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: '全角カタカナのみで入力して下さい' } do
