@@ -34,8 +34,6 @@ class Item < ApplicationRecord
     validates :shipping_prefecture_id
     validates :shipping_period_id
   end
-
-
   #validates :detail_category_id, numericality: { other_than: 1 , itemcategory: "can't be blank"}
 
 end
