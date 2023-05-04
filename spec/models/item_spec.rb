@@ -42,7 +42,7 @@ RSpec.describe Item, type: :model do
       it 'ログイン状態でないと出品できない' do
         @item.user_id = nil
         @item.valid?        
-        expect(@item.errors.full_messages).to include('User must exist')
+        expect(@item.errors.full_messages).to include("User must exist")
       end
       it '商品画像を1枚つけることが必須' do
         @item.image = nil
