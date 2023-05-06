@@ -2,9 +2,9 @@ class ItemsController < ApplicationController
   #loginしていない場合
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
-  # def index    
-    # @items = Item.includes(:user).order('created_at DESC') #昇順/降順
-  # end
+  def index    
+     @items = Item.includes(:user).order('created_at DESC') #昇順/降順
+  end
 
   def new
     @item = Item.new
