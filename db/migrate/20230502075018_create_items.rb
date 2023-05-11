@@ -1,6 +1,6 @@
 class CreateItems < ActiveRecord::Migration[6.0]
   belongs_to : user
-  #has_one: order
+  has_one: order
 
   def change
     create_table :items do |t|

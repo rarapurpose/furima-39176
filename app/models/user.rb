@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :items      
+  has_many :orders
   validates :nickname, :birthday, presence: true
   
   with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: '全角カタカナのみで入力して下さい' } do

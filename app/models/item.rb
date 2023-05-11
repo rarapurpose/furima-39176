@@ -3,6 +3,7 @@ class Item < ApplicationRecord
 
   #table
   belongs_to :user
+  has_one :order
 
   #ActiveHash
   belongs_to :detail_category 
