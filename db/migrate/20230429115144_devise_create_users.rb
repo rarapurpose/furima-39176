@@ -2,7 +2,6 @@
 class DeviseCreateUsers < ActiveRecord::Migration[6.0]
   has_many: items
   has_many: orders
-
   def change
     create_table :users do |t|
       
