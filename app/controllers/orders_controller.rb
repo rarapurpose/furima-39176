@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, except: :index
+  before_action :non_purchased_item, only: [:index, :create]
 
   
 
@@ -28,8 +29,6 @@ class OrdersController < ApplicationController
     params.require(:order_address).permit(:postal_code, :shipping_prefecture_id, :city, :street, :apartment, :phone_number).merge(user_id: current_user.id, item_id: params[:item_id], token: params[:token])
   end
 
-
-
   def pay_item    
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
      Payjp::Charge.create(
@@ -38,5 +37,11 @@ class OrdersController < ApplicationController
       currency: 'jpy'                 
      )
   end
+  
+  def non_purchased_item
+    @item = Item.find(params[:item_id])
+    redirect_to root_path if current_user.id == @item.user_id || @item.order.present?
+    end     
+  end
 
-end
+

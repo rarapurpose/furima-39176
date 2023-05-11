@@ -1,8 +1,7 @@
-class ItemsController < ApplicationController
-  
+class ItemsController < ApplicationController  
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :non_item, only: [:edit, :update, :destroy]
+  before_action :set_item, only: [:edit, :show, :update, :destroy]
+ 
 
   
   def index    
@@ -55,21 +54,12 @@ end
   end
 
   def set_item
-    @item = Item.find(params[:id])
-    
-  end
-
-  def non_item
-    @item = Item.find(params[:item_id])
-    if current_user.id == @item.user_id || @item.order.present?
-      redirect_to root_path 
-    end
-  end
-
-    
+    @item = Item.find(params[:id])    
+  end  
 
 
-  end
+
+end
 
 
 
