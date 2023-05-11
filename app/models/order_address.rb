@@ -10,13 +10,13 @@ class OrderAddress
   validates :shipping_prefecture_id, numericality: { other_than: 0 }
   validates :city
   validates :street  
-  validates :phone_number, format: {with: /\A[0-9]{11}\z/, message: 'は半角「ハイフンなし」で入力してください'}
+  validates :phone_number, format: {with: /\A[0-9]{10,11}\z/, message: 'は半角「ハイフンなし」で入力してください'}
 
   end
  
   def save
-    order = Order.create(user_id: user_id, item_id: item_id)
-    Address.create(postal_code: postal_code, shipping_prefecture_id: shipping_prefecture_id, city: city, street: street, apartment: apartment, phone_number: phone_number)
+    order = Order.create(user_id: user_id, item_id: item_id,)
+    Address.create(order_id: order.id, postal_code: postal_code, shipping_prefecture_id: shipping_prefecture_id, city: city, street: street, apartment: apartment, phone_number: phone_number)
     
   end
  end  

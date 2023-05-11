@@ -2,7 +2,9 @@ require 'rails_helper'
 
 RSpec.describe OrderAddress, type: :model do
   before do
-    @order_address = FactoryBot.build(:order_address)
+    user = FactoryBot.create(:user)
+    item = FactoryBot.create(:item)
+    @order_address = FactoryBot.build(:order_address, user_id: user.id, item_id: item.id)
   end
 
  describe '商品購入機能' do
@@ -50,7 +52,7 @@ RSpec.describe OrderAddress, type: :model do
       @order_address.phone_number = '09012345678'
       expect(@order_address).to be_valid
     end
-    it '電話番号は、10桁以上11桁以内の半角数値のみ保存できる' do
+    it '電話番号は、9桁以上11桁以内の半角数値のみ保存できる' do
       @order_address.phone_number = '09012345678'
       expect(@order_address).to be_valid
       
@@ -110,7 +112,7 @@ RSpec.describe OrderAddress, type: :model do
       @order_address.valid?
       expect(@order_address.errors.full_messages).to include("Phone number can't be blank")
     end
-    it '電話番号は、10桁以下なら登録できない' do
+    it '電話番号は、9桁以下なら登録できない' do
       @order_address.phone_number = '0901234'
       @order_address.valid?
       expect(@order_address.errors.full_messages).to include("Phone number は半角「ハイフンなし」で入力してください")
