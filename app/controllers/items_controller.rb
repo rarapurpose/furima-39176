@@ -1,8 +1,10 @@
 class ItemsController < ApplicationController
-  #loginしていない場合
+  
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :non_item, only: [:edit, :update, :destroy]
 
+  
   def index    
      @items = Item.includes(:user).order('created_at DESC') #昇順/降順
   end
@@ -46,8 +48,6 @@ class ItemsController < ApplicationController
     
 end
 
-
-
   private
 
   def item_params
@@ -56,7 +56,20 @@ end
 
   def set_item
     @item = Item.find(params[:id])
+    
+  end
+
+  def non_item
+    @item = Item.find(params[:item_id])
+    if current_user.id == @item.user_id || @item.order.present?
+      redirect_to root_path 
+    end
+  end
+
+    
+
+
   end
 
 
-end
+
