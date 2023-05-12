@@ -1,7 +1,5 @@
 class CreateOrders < ActiveRecord::Migration[6.0]
-  belongs_to: user
-  belongs_to: item
-  has_one: address
+
 
   def change
     create_table :orders do |t|
