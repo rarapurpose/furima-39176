@@ -66,80 +66,80 @@ RSpec.describe OrderAddress, type: :model do
     it 'user_idが必須' do
       @order_address.user_id = nil
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("User can't be blank")
+      expect(@order_address.errors.full_messages).to include("Userを入力してください")
     end
     it 'item_idが必須' do
       @order_address.item_id = nil
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Item can't be blank")
+      expect(@order_address.errors.full_messages).to include("Itemを入力してください")
       
     end
 
     it 'postal_codeが必須' do
       @order_address.postal_code = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Postal code can't be blank")
+      expect(@order_address.errors.full_messages).to include("郵便番号を入力してください")
     end
     it 'postal_codeは「3桁ハイフン4桁」ではないと登録できない' do
       @order_address.postal_code = '1111111'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Postal code は半角「ハイフン表示」で入力してください")
+      expect(@order_address.errors.full_messages).to include("郵便番号は半角「ハイフン表示」で入力してください")
     end
     it 'postal_codeは半角文字列ではないと登録できない' do
       @order_address.postal_code = '１１１－１１１１'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Postal code は半角「ハイフン表示」で入力してください")
+      expect(@order_address.errors.full_messages).to include("郵便番号は半角「ハイフン表示」で入力してください")
     end
 
     it 'shipping_prefecture(都道府県)が---」以外であれば登録できる' do
       @order_address.shipping_prefecture_id = 0
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Shipping prefecture must be other than 0")
+      expect(@order_address.errors.full_messages).to include("都道府県は0以外の値にしてください")
     end
     it 'city(市区町村)が必須' do
       @order_address.city = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("City can't be blank")
+      expect(@order_address.errors.full_messages).to include("市区町村を入力してください")
     end
     it 'street(番地)が必須' do
       @order_address.street = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Street can't be blank")
+      expect(@order_address.errors.full_messages).to include("番地を入力してください")
     end
 
     it 'phone_number電話番号が必須' do
       @order_address.phone_number = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Phone number can't be blank")
+      expect(@order_address.errors.full_messages).to include("電話番号を入力してください")
     end
     it '電話番号は、9桁以下なら登録できない' do
       @order_address.phone_number = '0901234'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Phone number は半角「ハイフンなし」で入力してください")
+      expect(@order_address.errors.full_messages).to include("電話番号は半角「ハイフンなし」で入力してください")
     end
     it '電話番号は、12桁以上なら登録できない' do
       @order_address.phone_number = '09012345678888'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Phone number は半角「ハイフンなし」で入力してください")
+      expect(@order_address.errors.full_messages).to include("電話番号は半角「ハイフンなし」で入力してください")
     end
 
     it '電話番号は、半角数値ではないと登録できない' do
       @order_address.phone_number = '０９０１２３４５６７８'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Phone number は半角「ハイフンなし」で入力してください")
+      expect(@order_address.errors.full_messages).to include("電話番号は半角「ハイフンなし」で入力してください")
     end
 
     it '電話番号は、ハイフンがあると登録できない' do
       @order_address.phone_number = '090-1234-5678'
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Phone number は半角「ハイフンなし」で入力してください")
+      expect(@order_address.errors.full_messages).to include("電話番号は半角「ハイフンなし」で入力してください")
     end
 
 
     it 'tokenがが必須' do
       @order_address.token = ''
       @order_address.valid?
-      expect(@order_address.errors.full_messages).to include("Token can't be blank")   
+      expect(@order_address.errors.full_messages).to include("クレジットカード情報を入力してください")   
       
             
     end
