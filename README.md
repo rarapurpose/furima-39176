@@ -1,27 +1,4 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-
 ## TABLE 
 ----
 # users table   
@@ -85,7 +62,21 @@ Things you may want to cover:
 # item category  
  belongs_to : item
 
+-----
+
+# ERD
+
+<img width="521" alt="erfurima" src="https://github.com/rarapurpose/furima-39176/assets/129743144/fb3a464a-d47e-4318-95c0-ec0595f4ec1e">
 
 
+----
+
+# 開発状況
+- 開発環境   
+Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code   
+- 開発期間と平均作業時間   
+- 開発期間：4/26~5/10（14日間）   
+  1日あたりの平均作業時間：9   
+  合計：120   
 
  
