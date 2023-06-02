@@ -1,4 +1,3 @@
-# README
 ## TABLE 
 ----
 # users table   
@@ -78,5 +77,21 @@ Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 - 開発期間：4/26~5/10（14日間）   
   1日あたりの平均作業時間：9   
   合計：120   
+  
+ # フリーマーケット
+- 接続先情報
+  http://35.78.133.37/
+- ID/Pass
+   ID: admin
+   Pass: 2222
+
 
  
+
+
+https://github.com/rarapurpose/furima-39176/assets/129743144/228b504e-babb-419a-a688-e89f3c89c694
+
+
+
+https://github.com/rarapurpose/furima-39176/assets/129743144/a00b3894-b6b5-449c-8014-b088520e7fa6
+
